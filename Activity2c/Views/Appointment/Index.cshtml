@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Activity2c.Models.AppointmentModel>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.patientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.appointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.patientNetWorth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.doctorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.painLevel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.patientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.appointmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.patientNetWorth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.doctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.painLevel)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", Model)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
